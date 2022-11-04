@@ -1,6 +1,9 @@
+import 'dart:typed_data';
+
 import 'package:cv_builder_app/mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 void main() {
   runApp(const MyApp());
@@ -80,11 +83,20 @@ class _MyHomePageState extends State<MyHomePage> {
  Future <void>_createPdf ()async{
     PdfDocument document=  PdfDocument();
    final page= document.pages.add();//to add pages
+    //to add text to the pdf
     page.graphics.drawString("Sabah Tartir CV welcome to my test", PdfStandardFont(PdfFontFamily.helvetica, 16));
+
+    //to add images to the pdf
+    page.graphics.drawImage(PdfBitmap(await  _readImageData('poster.png')), Rect.fromLTWH(0, 100, 440, 550));
    List<int>bytes=await document.save();
    document.dispose();
    saveAndLanchFile(bytes, 'output.pdf');
+ }
 
 
+ Future<Uint8List>_readImageData(String name)async{
+
+    final data = await rootBundle.load('images/$name');
+    return data.buffer.asUint8List(data.offsetInBytes,data.lengthInBytes);
  }
 }
