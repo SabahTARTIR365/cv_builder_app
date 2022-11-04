@@ -79,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
  Future <void>_createPdf ()async{
     PdfDocument document=  PdfDocument();
-    document.pages.add();//to add pages
+   final page= document.pages.add();//to add pages
+    page.graphics.drawString("Sabah Tartir CV welcome to my test", PdfStandardFont(PdfFontFamily.helvetica, 16));
    List<int>bytes=await document.save();
    document.dispose();
    saveAndLanchFile(bytes, 'output.pdf');
