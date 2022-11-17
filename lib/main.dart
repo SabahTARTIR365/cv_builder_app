@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
     page.graphics.drawImage(PdfBitmap(await  _readImageData('poster.png')), Rect.fromLTWH(0, 100, 440, 550));
    List<int>bytes=await document.save();
    document.dispose();
-   saveAndLanchFile(bytes, 'output.pdf');
+   saveAndLaunchFile(bytes, 'output.pdf');
  }
 
 
