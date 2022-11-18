@@ -1,5 +1,7 @@
 import 'package:cv_builder_app/views/widgets/create_cv_button.dart';
 import 'package:cv_builder_app/views/widgets/cv_templete_widget.dart';
+import 'package:cv_builder_app/views/widgets/dashed_widget.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +43,7 @@ leading: Icon(Icons.menu),),
           const Text('My Resume/CV',
               style: TextStyle(fontWeight:FontWeight.bold,
                   fontSize:17,color: Color(0xff0F6ABC)))),
+      DashedWidget(),
 
 
   ],),

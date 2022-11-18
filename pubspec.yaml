@@ -37,6 +37,7 @@ dependencies:
   syncfusion_flutter_pdf: ^20.3.52
   path_provider: ^2.0.10
   open_file: ^3.2.1
+  dotted_border: ^2.0.0+3
 
 
 
