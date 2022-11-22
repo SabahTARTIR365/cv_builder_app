@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:cv_builder_app/page2.dart';
 import 'package:cv_builder_app/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:typed_data';
@@ -7,7 +8,7 @@ import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 void main() {
-  runApp( const MaterialApp(
+  runApp( MaterialApp(
     home:  SplashScreen(),
   ));
 }
