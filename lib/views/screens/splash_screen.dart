@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:cv_builder_app/page2.dart';
 import 'package:flutter/material.dart';
 
-import 'build_cv_screen.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
             () =>
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BuildCvScreen()),
+              MaterialPageRoute(builder: (context) => HomeScreen()),
             ));
   }
 
