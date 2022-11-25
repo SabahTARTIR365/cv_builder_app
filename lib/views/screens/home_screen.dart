@@ -1,3 +1,4 @@
+import 'package:cv_builder_app/data/app_constants.dart';
 import 'package:cv_builder_app/views/widgets/create_cv_button.dart';
 import 'package:cv_builder_app/views/widgets/cv_templete_widget.dart';
 import 'package:cv_builder_app/views/widgets/dashed_widget.dart';
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget
   @override
   Widget build(BuildContext context) {
 return Scaffold(
-appBar: AppBar(title: Text('Super Resume',textAlign: TextAlign.left,),backgroundColor: Color(0xff0F6ABC),
+appBar: AppBar(title: const Text('Super Resume',textAlign: TextAlign.left,),backgroundColor: appBlue,
 leading: Icon(Icons.menu),),
 
   body: Column(
@@ -24,9 +25,9 @@ leading: Icon(Icons.menu),),
     Container(
         margin:EdgeInsets.only(left:10) ,
         child:
-         const Text('Browse Templates',
+          Text('Browse Templates',
              style: TextStyle(fontWeight:FontWeight.bold,
-             fontSize:17,color: Color(0xff0F6ABC)))),
+             fontSize:17,color: appBlue))),
 
       SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -40,9 +41,9 @@ leading: Icon(Icons.menu),),
       Container(
           margin:EdgeInsets.only(left:10) ,
           child:
-          const Text('My Resume/CV',
+           Text('My Resume/CV',
               style: TextStyle(fontWeight:FontWeight.bold,
-                  fontSize:17,color: Color(0xff0F6ABC)))),
+                  fontSize:17,color: appBlue))),
       DashedWidget(),
 
 
