@@ -20,12 +20,12 @@ leading: Icon(Icons.menu),),
    //mainAxisAlignment:MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.start,
     children:  [
-    CreateCvButton(),
+    const CreateCvButton(),
      SizedBox(height: 10),
     Container(
         margin:EdgeInsets.only(left:10) ,
         child:
-          Text('Browse Templates',
+          const Text('Browse Templates',
              style: TextStyle(fontWeight:FontWeight.bold,
              fontSize:17,color: appBlue))),
 

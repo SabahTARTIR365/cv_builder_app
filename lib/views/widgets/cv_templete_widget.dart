@@ -17,7 +17,7 @@ class CvTempleteWidget extends StatelessWidget
       ),
       child: Padding(
         padding:EdgeInsets.only( right:0.5,left:0.5),
-        child: Image.asset(imagePath,fit: BoxFit.cover,),
+        child: Image.asset(this.imagePath,fit: BoxFit.cover,),
       ),
     );
   }

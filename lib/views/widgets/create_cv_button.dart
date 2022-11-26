@@ -1,3 +1,5 @@
+import 'package:cv_builder_app/app_router/app_router.dart';
+import 'package:cv_builder_app/views/screens/build_cv_screen.dart';
 import 'package:flutter/material.dart';
 
 class CreateCvButton extends StatelessWidget
@@ -34,7 +36,14 @@ return Container(
                 backgroundColor:  Color(0xff0F6ABC),
                child: Icon(Icons.add),
 
-                  onPressed: (){}),
+                  onPressed: (){
+                   // AppRouter.appRouter.goReplace(BuildCvScreen());
+                    print("Clicked");
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(builder: (context) =>  BuildCvScreen()),
+                    );
+                  }),
 
 
 

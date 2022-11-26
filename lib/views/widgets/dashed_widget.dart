@@ -1,3 +1,5 @@
+import 'package:cv_builder_app/app_router/app_router.dart';
+import 'package:cv_builder_app/views/screens/build_cv_screen.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +26,7 @@ return     Container(
           TextButton(
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),),
-            onPressed: () {},
+            onPressed: () { AppRouter.appRouter.goToWidgetAndReplace(BuildCvScreen());},
             child: const  Text('Create one now! ', style: TextStyle(fontWeight:FontWeight.bold,
                 fontSize:15,color: Color(0xff26D04A))),
           ),

@@ -10,7 +10,7 @@ import 'package:flutter/services.dart' show rootBundle;
 
 void main() {
   runApp(  const MaterialApp(
-    home: BuildCvScreen(),//SplashScreen(),
+    home: MyApp(),//BuildCvScreen(),//
   ));
 }
 
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen()//const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

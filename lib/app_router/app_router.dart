@@ -32,6 +32,15 @@ class AppRouter
 
     }));
   }
+  goReplace(Widget widget)
+  {
+    navigatorKey.currentState!.push(MaterialPageRoute(
+        builder: (context){
+          return widget;
+
+
+        }));
+  }
 
 
 }

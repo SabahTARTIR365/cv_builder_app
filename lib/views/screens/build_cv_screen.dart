@@ -19,9 +19,14 @@ class BuildCvScreen extends StatelessWidget
    return Scaffold(
      backgroundColor: appGray,
      appBar:AppBar(
-         title: Text('Create Resume',textAlign: TextAlign.left,),
+         title: const Text('Create Resume',textAlign: TextAlign.left,),
          backgroundColor: appBlue,
-       leading: Icon(Icons.arrow_back),),
+         leading: IconButton(
+           onPressed: () {Navigator.of(context).pop();},
+                  icon: Icon(Icons.arrow_back,),
+     ),
+
+     ),
      body: Row(
        children: [
          Container(
