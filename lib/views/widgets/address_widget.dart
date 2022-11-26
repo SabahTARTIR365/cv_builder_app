@@ -10,14 +10,20 @@ class AddressWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: TextInputType.multiline,
+      maxLines: null,//Normal textInputField will be displayed
       decoration: InputDecoration(
+        alignLabelWithHint: true,
         isDense: true,
-        contentPadding: EdgeInsets.fromLTRB(50, 50, 50, 50),
+        contentPadding: EdgeInsets.fromLTRB(20, 50, 20, 50),
         fillColor: Colors.white,
         filled: true,
         labelText: labelText,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(
+            color: Color(0xff26D04A),
+            width: 9,
+          ),
 
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,

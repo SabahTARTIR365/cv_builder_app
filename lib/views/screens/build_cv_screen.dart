@@ -1,7 +1,7 @@
 import 'package:cv_builder_app/data/app_constants.dart';
 import 'package:cv_builder_app/views/widgets/address_widget.dart';
-import 'package:cv_builder_app/views/widgets/button_prefab.dart';
 import 'package:cv_builder_app/views/widgets/input_prefab.dart';
+import 'package:cv_builder_app/views/widgets/next_button.dart';
 import 'package:cv_builder_app/views/widgets/text_label_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -46,13 +46,13 @@ class BuildCvScreen extends StatelessWidget
                ),
              ],
               ),
-           margin: EdgeInsets.only(top:30,),
+           margin: EdgeInsets.only(top:10,),
            child:
            SingleChildScrollView(
                child: Column(
                    children:[
                      const SizedBox(height: 25,),
-                     Icon(Icons.person,color:appDarkGray ),
+                     Icon(Icons.person,color:appBlue ),
                      Text('Info',style: TextStyle(color: appDarkGray),),
                      const SizedBox(height: 25,),
                      Icon(Ionicons.briefcase_sharp,color:appDarkGray),
@@ -77,7 +77,7 @@ class BuildCvScreen extends StatelessWidget
          ),
              Container(
                width: MediaQuery.of(context).size.width*0.70,
-               margin: EdgeInsets.only(top:50,left:MediaQuery.of(context).size.width*0.05),
+               margin: EdgeInsets.only(top:70,left:MediaQuery.of(context).size.width*0.05),
               // color: Colors.red,
                child: SingleChildScrollView(
                      child:
@@ -109,6 +109,13 @@ class BuildCvScreen extends StatelessWidget
                      TextLabelWidget('Address'),
                      const  SizedBox(height: 10,),
                      AddressWidget(labelText: 'Tunes Street, Nablus, Palestine',onSaved: (String ) {  },),
+                     const  SizedBox(height: 10,),
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.end,
+                       children: [
+                         NextButton(text: 'Next:Work', onPressed: () {  }, ),
+                       ],
+                     ),
                    ],
                  ),),
     ),
