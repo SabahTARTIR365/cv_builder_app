@@ -28,8 +28,6 @@ class AppRouter
     navigatorKey.currentState!.pushReplacement(MaterialPageRoute(
         builder: (context){
       return widget;
-
-
     }));
   }
   goReplace(Widget widget)

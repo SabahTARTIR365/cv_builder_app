@@ -51,14 +51,20 @@ class BuildCvScreen extends StatelessWidget
                ),
              ],
               ),
-           margin: EdgeInsets.only(top:10,),
+          margin: EdgeInsets.only(top:10,),
            child:
            SingleChildScrollView(
                child: Column(
                    children:[
                      const SizedBox(height: 25,),
-                     Icon(Icons.person,color:appBlue ),
-                     Text('Info',style: TextStyle(color: appDarkGray),),
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                       children: [
+                         Icon(Icons.person,color:appGreen ),
+                         Icon(Icons.done_outline,size: 10,color: appGreen,)
+                       ],
+                     ),
+                     Text('Info',style: TextStyle(color: appGreen),),
                      const SizedBox(height: 25,),
                      Icon(Ionicons.briefcase_sharp,color:appDarkGray),
                       Text('Work',style: TextStyle(color: appDarkGray),),
@@ -80,15 +86,16 @@ class BuildCvScreen extends StatelessWidget
                ),
              ),
          ),
-             Container(
+         Container(
                width: MediaQuery.of(context).size.width*0.70,
-               margin: EdgeInsets.only(top:70,left:MediaQuery.of(context).size.width*0.05),
+               margin: EdgeInsets.only(top:30,left:MediaQuery.of(context).size.width*0.05),
               // color: Colors.red,
                child: SingleChildScrollView(
                      child:
                  Column(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
+
                      Text('Personal Information',style:
                      TextStyle(fontSize: 16,color:appBlue,fontWeight: FontWeight.bold),),
                     const  SizedBox(height: 5,),
@@ -124,8 +131,6 @@ class BuildCvScreen extends StatelessWidget
                    ],
                  ),),
     ),
-
-
        ],),
    );
   }

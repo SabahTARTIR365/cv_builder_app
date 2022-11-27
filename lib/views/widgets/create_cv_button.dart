@@ -37,7 +37,9 @@ return Container(
                child: Icon(Icons.add),
 
                   onPressed: (){
-                   // AppRouter.appRouter.goReplace(BuildCvScreen());
+
+                    print("Clicked");
+                 // AppRouter.appRouter.goToWidgetAndReplace(BuildCvScreen());
                     print("Clicked");
                     Navigator.push(
                       context,
