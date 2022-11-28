@@ -1,6 +1,7 @@
 import 'package:cv_builder_app/data/app_constants.dart';
 import 'package:cv_builder_app/providers/cv_provider.dart';
-import 'package:cv_builder_app/views/widgets/address_widget.dart';
+import 'package:cv_builder_app/views/widgets/date_text_field.dart';
+import 'package:cv_builder_app/views/widgets/editable_text_widget.dart';
 import 'package:cv_builder_app/views/widgets/input_prefab.dart';
 import 'package:cv_builder_app/views/widgets/next_button.dart';
 import 'package:cv_builder_app/views/widgets/text_label_widget.dart';
@@ -141,52 +142,26 @@ class WorkScreen extends StatelessWidget
                     TextLabelWidget('Start Date'),
                     const SizedBox(height: 10,),
                     // field
-                    TextFormField(
-                        controller: provider.textEditingController, //editing controller of this TextField
-                        decoration: const InputDecoration(
-                            icon: Icon(Icons.calendar_today), //icon of text field
-                            labelText: "Enter Date" //label text of field
-                        ),
-                        readOnly: true,  // when true user cannot edit text
-                        onTap: () async {
-                          //when click we have to show the datepicker
-                          DateTime? pickedDate = await showDatePicker(
-                              context: context,
-                              initialDate: DateTime.now(), //get today's date
-                              firstDate:DateTime(2000), //DateTime.now() - not to allow to choose before today.
-                              lastDate: DateTime(2101)
-                          );
-                          if(pickedDate != null ){
-                            print(pickedDate);  //get the picked date in the format => 2022-07-04 00:00:00.000
-                            String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate); // format date in required form here we use yyyy-MM-dd that means time is removed
-                            print(formattedDate); //formatted date output using intl package =>  2022-07-04
-                            //You can format date as per your need
-                              provider.textEditingController.text = formattedDate; //set foratted date to TextField value.
-                              }else{
-                            print("Date is not selected");
-                             }
-
-
-
-
-
-                        }
-                    ),
-                    //
+                    DateTextField(textEditingController: provider.textEditingControllerStartDate,
+                        labelText: 'Enter Date',  onTap: () async {
+                      provider.createStartDatePicker(context);
+                    }),
                     const SizedBox(height: 10,),
                     TextLabelWidget('End Date'),
                     const SizedBox(height: 10,),
-                       // field
+                    DateTextField(textEditingController: provider.textEditingControllerEndDate,
+                        labelText: 'Enter End Date',  onTap: () async {
+                          provider.createEndDatePicker(context);
+                        }),
                     const SizedBox(height: 10,),
                     TextLabelWidget('Functions and achievements'),
                     const SizedBox(height: 10,),
-                    // field
-
+                    EditableTextWidget(),// here some fixes
                     const SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        NextButton(text: 'Next:Work', onPressed: () {},),
+                        NextButton(text: 'Next:Edu', onPressed: () {},),
                       ],
                     ),
                   ],

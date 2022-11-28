@@ -4,6 +4,7 @@ class InputPrefab extends StatelessWidget {
   final String? labelText;
   final Function(String?)? onSaved;
 
+
   InputPrefab({@required this.labelText, @required this.onSaved});
 
   @override
@@ -17,7 +18,6 @@ class InputPrefab extends StatelessWidget {
         labelText: labelText,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
-
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,
       ),

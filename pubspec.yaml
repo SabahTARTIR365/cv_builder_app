@@ -46,6 +46,8 @@ dependencies:
   iconsax: ^0.0.8
   ionicons: ^0.1.2
   intl: ^0.17.0
+  markdown_editable_textinput: ^2.1.0
+  flutter_markdown: ^0.6.10
 
 
 
