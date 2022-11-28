@@ -1,18 +1,36 @@
 import 'dart:async';
 import 'package:cv_builder_app/page2.dart';
+import 'package:cv_builder_app/providers/cv_provider.dart';
 import 'package:cv_builder_app/views/screens/build_cv_screen.dart';
 import 'package:cv_builder_app/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:typed_data';
 import 'package:cv_builder_app/mobile.dart';
+import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'views/screens/work_screen.dart';
+
 void main() {
-  runApp(  const MaterialApp(
-    home: MyApp(),//BuildCvScreen(),//
-  ));
+  runApp( InitApp()  /*const MaterialApp(home: MyApp(),//BuildCvScreen(),// )*/
+  );
 }
+
+
+class InitApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ChangeNotifierProvider<CvProvider >(
+        create: (context) {
+          return CvProvider ();
+        },
+        child: MyApp ());
+  }
+}
+
+
 
 
 //for the cv and creating pdf
@@ -28,7 +46,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen()//const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: WorkScreen()//SplashScreen()//const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

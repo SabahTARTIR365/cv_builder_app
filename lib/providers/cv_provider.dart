@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class CvProvider extends ChangeNotifier
 {
-  Widget _buildFullName()
-  {
+  TextEditingController textEditingController = TextEditingController();
 
-    return Text('mmm');
-  }
+
+
+
+  Widget _buildFullName()
+  {return Text('mmm');}
 
 }
