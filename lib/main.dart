@@ -27,12 +27,9 @@ class InitApp extends StatelessWidget {
         create: (context) {
           return CvProvider ();
         },
-        child: MyApp ());
+        child: const MyApp());
   }
 }
-
-
-
 
 //for the cv and creating pdf
 class MyApp extends StatelessWidget {
@@ -47,7 +44,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:EducationScreen()//SplashScreen()// WorkScreen()////const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:SplashScreen()//EducationScreen()SplashScreen()// WorkScreen()////const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

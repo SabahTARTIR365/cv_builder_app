@@ -8,7 +8,7 @@ import 'package:markdown_editable_textinput/markdown_text_input.dart';
 import 'package:provider/provider.dart';
 class EditableTextWidget extends StatelessWidget
 {
- String description='start' ;
+// String description='start' ;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,9 @@ return Consumer<CvProvider>(builder: (context, provider, x) {
   children:[
     MarkdownTextInput(
           (String value){
-            print('hi its sabah');
-            print (this.description);
-            print(provider.editableWidgetController.text);
-            this.description = provider.editableWidgetController.text;
-            provider.changePreviewWidget();
+           print(value);
+            provider.setdescription(value);
+
 
             },//set state for this value
       provider.editableWidgetController.text,
@@ -36,7 +34,6 @@ return Consumer<CvProvider>(builder: (context, provider, x) {
     ),
     TextButton(
       onPressed: () {
-        this.description = "";
         provider.editableWidgetController.clear();
       },
       child: Text('Clear'),
@@ -45,7 +42,7 @@ return Consumer<CvProvider>(builder: (context, provider, x) {
     Padding(
       padding: const EdgeInsets.only(top: 10),
       child: MarkdownBody(
-        data: this.description,
+        data: provider.description,
         shrinkWrap: true,
       ),
     ),

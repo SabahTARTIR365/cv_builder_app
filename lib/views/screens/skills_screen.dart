@@ -1,5 +1,6 @@
 import 'package:cv_builder_app/data/app_constants.dart';
 import 'package:cv_builder_app/providers/cv_provider.dart';
+import 'package:cv_builder_app/views/screens/summary_screen.dart';
 import 'package:cv_builder_app/views/widgets/date_text_field.dart';
 import 'package:cv_builder_app/views/widgets/editable_text_widget.dart';
 import 'package:cv_builder_app/views/widgets/input_prefab.dart';
@@ -86,14 +87,20 @@ class SkillsScreen extends StatelessWidget
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.school, color: appGreen),
+                        Icon(Icons.school, color: appDarkGray),
                         Icon(Icons.done_outline, size: 10, color: appGreen,)
                       ],
                     ),
-                    Text('Education', style: TextStyle(color: appGreen),),
+                    Text('Education', style: TextStyle(color:appDarkGray),),
                     const SizedBox(height: 25,),
-                    Icon(Ionicons.person_circle_sharp, color: appDarkGray),
-                    Text('Skills', style: TextStyle(color: appDarkGray),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Ionicons.person_circle_sharp, color: appGreen),
+                        Icon(Icons.done_outline, size: 10, color: appGreen,)
+                      ],
+                    ),
+                    Text('Skills', style: TextStyle(color: appGreen),),
                     const SizedBox(height: 25,),
                     Icon(Icons.summarize, color: appDarkGray),
                     Text('Summary', style: TextStyle(color: appDarkGray),),
@@ -167,10 +174,10 @@ class SkillsScreen extends StatelessWidget
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        NextButton(text: 'Next:Skills', onPressed: () {
-                          /*Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-                            return SkillsScreen();
-                          }));*/
+                        NextButton(text: 'Next:Sum', onPressed: () {
+                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                            return SummaryScreen();
+                          }));
 
 
                         },),

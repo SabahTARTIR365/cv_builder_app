@@ -7,7 +7,17 @@ class CvProvider extends ChangeNotifier
   TextEditingController textEditingControllerStartDate = TextEditingController();
   TextEditingController textEditingControllerEndDate = TextEditingController();
   TextEditingController editableWidgetController = TextEditingController();
-  changePreviewWidget(){
+  String description='start' ;
+
+  setdescription(String value)
+  {
+    description=value;
+    notifyListeners();
+  }
+
+
+  changePreviewWidget()
+  {
     notifyListeners();
   }
   createStartDatePicker(BuildContext context)async
