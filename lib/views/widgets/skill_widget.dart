@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 
 class SkillWidget extends StatelessWidget {
 late SkillModel skillModel;
+
+  SkillWidget(SkillModel allSkill);
   @override
   Widget build(BuildContext context) {
     return Container(

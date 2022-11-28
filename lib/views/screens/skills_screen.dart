@@ -5,6 +5,7 @@ import 'package:cv_builder_app/views/widgets/date_text_field.dart';
 import 'package:cv_builder_app/views/widgets/editable_text_widget.dart';
 import 'package:cv_builder_app/views/widgets/input_prefab.dart';
 import 'package:cv_builder_app/views/widgets/next_button.dart';
+import 'package:cv_builder_app/views/widgets/skill_widget.dart';
 import 'package:cv_builder_app/views/widgets/text_label_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -142,8 +143,18 @@ class SkillsScreen extends StatelessWidget
                     const SizedBox(height: 10,),
                     InputPrefab(
                       labelText: 'e.g Responsible', onSaved: (String) {},),
-                    NextButton(text: 'Add', onPressed: () {}),
+                    NextButton(text: 'Add',
+                        onPressed: () {
+                   // String data = provider.textEditingController.text;
+                    //Provider.of<CvProvider>(context, listen: false).insertNewSkill();
 
+                        }),
+                      /* ListView.builder(
+                         itemCount: provider.allSkill.length,
+                         itemBuilder: (context, index) {
+                            return SkillWidget(provider.allSkill[index]);
+                             }),
+                    */
                     const SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
