@@ -1,5 +1,6 @@
 import 'package:cv_builder_app/data/app_constants.dart';
 import 'package:cv_builder_app/providers/cv_provider.dart';
+import 'package:cv_builder_app/views/screens/education_screen.dart';
 import 'package:cv_builder_app/views/widgets/date_text_field.dart';
 import 'package:cv_builder_app/views/widgets/editable_text_widget.dart';
 import 'package:cv_builder_app/views/widgets/input_prefab.dart';
@@ -161,7 +162,13 @@ class WorkScreen extends StatelessWidget
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        NextButton(text: 'Next:Edu', onPressed: () {},),
+                        NextButton(text: 'Next:Edu', onPressed: () {
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                            return EducationScreen();
+                          }));
+
+
+                        },),
                       ],
                     ),
                   ],

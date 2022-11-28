@@ -7,6 +7,9 @@ class CvProvider extends ChangeNotifier
   TextEditingController textEditingControllerStartDate = TextEditingController();
   TextEditingController textEditingControllerEndDate = TextEditingController();
   TextEditingController editableWidgetController = TextEditingController();
+  changePreviewWidget(){
+    notifyListeners();
+  }
   createStartDatePicker(BuildContext context)async
 {
   //when click we have to show the datepicker

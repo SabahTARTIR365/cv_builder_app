@@ -24,7 +24,10 @@ return Consumer<CvProvider>(builder: (context, provider, x) {
             print('hi its sabah');
             print (this.description);
             print(provider.editableWidgetController.text);
-            description = provider.editableWidgetController.text;},//set state for this value
+            this.description = provider.editableWidgetController.text;
+            provider.changePreviewWidget();
+
+            },//set state for this value
       provider.editableWidgetController.text,
       label: 'Description',
       maxLines: 10,

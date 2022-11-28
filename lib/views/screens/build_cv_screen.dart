@@ -1,4 +1,5 @@
 import 'package:cv_builder_app/data/app_constants.dart';
+import 'package:cv_builder_app/views/screens/work_screen.dart';
 import 'package:cv_builder_app/views/widgets/address_widget.dart';
 import 'package:cv_builder_app/views/widgets/input_prefab.dart';
 import 'package:cv_builder_app/views/widgets/next_button.dart';
@@ -125,7 +126,16 @@ class BuildCvScreen extends StatelessWidget
                      Row(
                        mainAxisAlignment: MainAxisAlignment.end,
                        children: [
-                         NextButton(text: 'Next:Work', onPressed: () {  }, ),
+                         NextButton(text: 'Next:Work', onPressed: () {
+
+                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                             return WorkScreen();
+                           }));
+
+
+
+
+                         }, ),
                        ],
                      ),
                    ],
