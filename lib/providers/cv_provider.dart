@@ -1,3 +1,4 @@
+import 'package:cv_builder_app/models/skill_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -7,7 +8,25 @@ class CvProvider extends ChangeNotifier
   TextEditingController textEditingControllerStartDate = TextEditingController();
   TextEditingController textEditingControllerEndDate = TextEditingController();
   TextEditingController editableWidgetController = TextEditingController();
+  TextEditingController textEditingController = TextEditingController();
+
   String description='start' ;
+  List<SkillModel> allSkill = [];
+  getAllSkills() {
+    notifyListeners();
+  }
+  insertNewSkill() {
+    SkillModel skillModel = SkillModel(title: textEditingController.text);
+    allSkill.add(skillModel);
+    textEditingController.clear();
+    getAllSkills();
+  }
+
+  deleteSkill( SkillModel skillModel)
+  {
+    allSkill.remove(skillModel);
+    getAllSkills();
+  }
 
   setdescription(String value)
   {

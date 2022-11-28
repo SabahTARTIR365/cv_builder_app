@@ -60,7 +60,7 @@ class SkillsScreen extends StatelessWidget
                   ),
                 ],
               ),
-              margin: EdgeInsets.only(top: 10,),
+              margin: EdgeInsets.only(top: 30,),
               child:
               SingleChildScrollView(
                 child: Column(
@@ -129,47 +129,21 @@ class SkillsScreen extends StatelessWidget
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-                    const Text('Awesome! Now, what qualifications do you have?', style:
+                    const Text('Skills', style:
                     TextStyle(fontSize: 16,
                         color: appBlue,
                         fontWeight: FontWeight.bold),),
                     const SizedBox(height: 5,),
                     const Text(
-                      'Start with your most recent period of education and work backwards. '
+                      'Almost finished the basics! Just add a list of skills '
                       , style: TextStyle(fontSize: 14, color: appBlue),),
                     const SizedBox(height: 15,),
-                    TextLabelWidget('Degree '),
+                    TextLabelWidget('Skill '),
                     const SizedBox(height: 10,),
                     InputPrefab(
-                      labelText: 'e.g Bachelor, master', onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Name of school/institution'),
-                    const SizedBox(height: 10,),
-                    InputPrefab(labelText: 'e.g. City College of San Francisco', onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Location '),
-                    const SizedBox(height: 10,),
-                    InputPrefab(labelText: 'e.g. San Francisco, CA',
-                      onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Start Date'),
-                    const SizedBox(height: 10,),
-                    // field
-                    DateTextField(textEditingController: provider.textEditingControllerStartDate,
-                        labelText: 'Enter Date',  onTap: () async {
-                          provider.createStartDatePicker(context);
-                        }),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Graduation year Date'),
-                    const SizedBox(height: 10,),
-                    DateTextField(textEditingController: provider.textEditingControllerEndDate,
-                        labelText: '',  onTap: () async {
-                          provider.createEndDatePicker(context);
-                        }),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Description and achievements'),
-                    const SizedBox(height: 10,),
-                    EditableTextWidget(),// here some fixes
+                      labelText: 'e.g Responsible', onSaved: (String) {},),
+                    NextButton(text: 'Add', onPressed: () {}),
+
                     const SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
