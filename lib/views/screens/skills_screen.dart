@@ -18,6 +18,8 @@ import 'package:provider/provider.dart';
 class SkillsScreen extends StatelessWidget
 {
 
+  static int isDone=0;
+
 
   const SkillsScreen({Key? key}) : super(key: key);
   @override
@@ -147,16 +149,20 @@ class SkillsScreen extends StatelessWidget
                       labelText: 'e.g Responsible', onSaved: (String) {},),
                     NextButton(text: 'Add',
                         onPressed: () {
-                   // String data = provider.textEditingController.text;
-                    //Provider.of<CvProvider>(context, listen: false).insertNewSkill();
-
+                   String data = provider.textEditingController.text;
+                   print(data);
+                   Provider.of<CvProvider>(context, listen: false).insertNewSkill();
+                   print(data);
+                          isDone=1;
                         }),
-                      /* ListView.builder(
+                      isDone==1?  ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
                          itemCount: provider.allSkill.length,
                          itemBuilder: (context, index) {
                             return SkillWidget(provider.allSkill[index]);
-                             }),
-                    */
+                             }):Text('no data inserted'),
+
                     const SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,

@@ -3,6 +3,7 @@ import 'package:cv_builder_app/page2.dart';
 import 'package:cv_builder_app/providers/cv_provider.dart';
 import 'package:cv_builder_app/views/screens/build_cv_screen.dart';
 import 'package:cv_builder_app/views/screens/education_screen.dart';
+import 'package:cv_builder_app/views/screens/skills_screen.dart';
 import 'package:cv_builder_app/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:typed_data';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:SplashScreen()//EducationScreen()SplashScreen()// WorkScreen()////const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:SkillsScreen()//SplashScreen()//EducationScreen()SplashScreen()// WorkScreen()////const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

@@ -17,6 +17,8 @@ class CvProvider extends ChangeNotifier
   }
   insertNewSkill() {
     SkillModel skillModel = SkillModel(title: textEditingController.text);
+    print('inside insert function sabah');
+    print( skillModel .title);
     allSkill.add(skillModel);
     textEditingController.clear();
     getAllSkills();

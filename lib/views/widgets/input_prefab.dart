@@ -12,7 +12,7 @@ class InputPrefab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-     // controller:  Provider.of<CvProvider>(context).textEditingController,
+      controller:  Provider.of<CvProvider>(context).textEditingController,
       decoration: InputDecoration(
         isDense: true,
         contentPadding: EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -24,7 +24,7 @@ class InputPrefab extends StatelessWidget {
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,
       ),
-      initialValue: '',
+      //initialValue: '',
       validator: (String? value) {
         return value == null ? '$labelText is required' : null;
       },
