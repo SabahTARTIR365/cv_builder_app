@@ -35,6 +35,7 @@ class SkillsScreen extends StatelessWidget
       ),
       body:  Consumer<CvProvider>(builder: (context, provider, x) {
         return Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: MediaQuery
@@ -65,6 +66,7 @@ class SkillsScreen extends StatelessWidget
               child:
               SingleChildScrollView(
                 child: Column(
+                  mainAxisSize: MainAxisSize.min ,
                   children: [
                     const SizedBox(height: 25,),
                     Row(

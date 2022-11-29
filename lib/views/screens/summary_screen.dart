@@ -33,6 +33,7 @@ class SummaryScreen extends StatelessWidget
       ),
       body:  Consumer<CvProvider>(builder: (context, provider, x) {
         return Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: MediaQuery
@@ -59,10 +60,11 @@ class SummaryScreen extends StatelessWidget
                   ),
                 ],
               ),
-              margin: EdgeInsets.only(top: 10,),
+              margin: EdgeInsets.only(top: 30,),
               child:
               SingleChildScrollView(
                 child: Column(
+                  mainAxisSize: MainAxisSize.min ,
                   children: [
                     const SizedBox(height: 25,),
                     Row(

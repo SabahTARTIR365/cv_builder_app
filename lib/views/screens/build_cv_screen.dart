@@ -29,9 +29,11 @@ class BuildCvScreen extends StatelessWidget
 
      ),
      body: Row(
+       crossAxisAlignment: CrossAxisAlignment.start,
        children: [
          Container(
-           width: MediaQuery.of(context).size.width*0.2,
+
+          width: MediaQuery.of(context).size.width*0.2,
            decoration:  BoxDecoration
              (
              border: Border.all
@@ -52,40 +54,41 @@ class BuildCvScreen extends StatelessWidget
                ),
              ],
               ),
-          margin: EdgeInsets.only(top:10,),
+          margin: EdgeInsets.only(top:30,),
            child:
            SingleChildScrollView(
-               child: Column(
-                   children:[
-                     const SizedBox(height: 25,),
-                     Row(
-                       mainAxisAlignment: MainAxisAlignment.center,
-                       children: [
-                         Icon(Icons.person,color:appGreen ),
-                         Icon(Icons.done_outline,size: 10,color: appGreen,)
-                       ],
-                     ),
-                     Text('Info',style: TextStyle(color: appGreen),),
-                     const SizedBox(height: 25,),
-                     Icon(Ionicons.briefcase_sharp,color:appDarkGray),
-                      Text('Work',style: TextStyle(color: appDarkGray),),
-                     const SizedBox(height: 25,),
-                     Icon(Icons.school,color:appDarkGray),
-                     Text('Education',style: TextStyle(color: appDarkGray),),
-                     const SizedBox(height: 25,),
-                     Icon(Ionicons.person_circle_sharp,color:appDarkGray),
-                     Text('Skills',style: TextStyle(color: appDarkGray),),
-                     const SizedBox(height: 25,),
-                     Icon(Icons.summarize,color:appDarkGray),
-                     Text('Summary',style: TextStyle(color: appDarkGray),),
-                     const SizedBox(height: 25,),
-                     Icon(Icons.library_add_sharp,color:appDarkGray),
-                     Text('Extras',style: TextStyle(color: appDarkGray),),
-                     const SizedBox(height: 25,),
+             child: Column(
+               mainAxisSize: MainAxisSize.min ,
+                 children:[
+                   const SizedBox(height: 25,),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Icon(Icons.person,color:appGreen ),
+                       Icon(Icons.done_outline,size: 10,color: appGreen,)
+                     ],
+                   ),
+                   Text('Info',style: TextStyle(color: appGreen),),
+                   const SizedBox(height: 25,),
+                   Icon(Ionicons.briefcase_sharp,color:appDarkGray),
+                    Text('Work',style: TextStyle(color: appDarkGray),),
+                   const SizedBox(height: 25,),
+                   Icon(Icons.school,color:appDarkGray),
+                   Text('Education',style: TextStyle(color: appDarkGray),),
+                   const SizedBox(height: 25,),
+                   Icon(Ionicons.person_circle_sharp,color:appDarkGray),
+                   Text('Skills',style: TextStyle(color: appDarkGray),),
+                   const SizedBox(height: 25,),
+                   Icon(Icons.summarize,color:appDarkGray),
+                   Text('Summary',style: TextStyle(color: appDarkGray),),
+                   const SizedBox(height: 25,),
+                   Icon(Icons.library_add_sharp,color:appDarkGray),
+                   Text('Extras',style: TextStyle(color: appDarkGray),),
+                   const SizedBox(height: 25,),
 
-                   ],
-               ),
+                 ],
              ),
+           ),
          ),
          Container(
                width: MediaQuery.of(context).size.width*0.70,
