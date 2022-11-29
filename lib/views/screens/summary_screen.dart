@@ -1,5 +1,6 @@
 import 'package:cv_builder_app/data/app_constants.dart';
 import 'package:cv_builder_app/providers/cv_provider.dart';
+import 'package:cv_builder_app/views/screens/extras_screen.dart';
 import 'package:cv_builder_app/views/widgets/date_text_field.dart';
 import 'package:cv_builder_app/views/widgets/editable_text_widget.dart';
 import 'package:cv_builder_app/views/widgets/input_prefab.dart';
@@ -153,9 +154,9 @@ class SummaryScreen extends StatelessWidget
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         NextButton(text: 'Next:Extras', onPressed: () {
-                          /*Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-                            return SkillsScreen();
-                          }));*/
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                            return ExtrasScreen();
+                          }));
 
 
                         },),
