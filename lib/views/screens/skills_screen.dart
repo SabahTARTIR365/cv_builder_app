@@ -143,7 +143,7 @@ class SkillsScreen extends StatelessWidget
                       'Almost finished the basics! Just add a list of skills '
                       , style: TextStyle(fontSize: 14, color: appBlue),),
                     const SizedBox(height: 15,),
-                    TextLabelWidget('Skill '),
+                    TextLabelWidget('Skills '),
                     const SizedBox(height: 10,),
                     InputPrefab(
                       labelText: 'e.g Responsible', onSaved: (String) {},),
