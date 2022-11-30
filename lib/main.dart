@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:SkillsScreen()//SplashScreen()//EducationScreen()SplashScreen()// WorkScreen()////const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:SplashScreen()//EducationScreen()SplashScreen()// WorkScreen()////const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

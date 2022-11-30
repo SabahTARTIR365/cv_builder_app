@@ -2,17 +2,18 @@ import 'package:cv_builder_app/providers/cv_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class InputPrefab extends StatelessWidget {
+class RoundedTextField extends StatelessWidget {
   final String? labelText;
   final Function(String?)? onSaved;
+  final  TextEditingController? controller;
 
 
-  InputPrefab({@required this.labelText, @required this.onSaved});
+   RoundedTextField({@required this.labelText, @required this.onSaved, this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller:  Provider.of<CvProvider>(context).textEditingController,
+      controller:  controller,//Provider.of<CvProvider>(context).textEditingController,//for skill controller
       decoration: InputDecoration(
         isDense: true,
         contentPadding: EdgeInsets.fromLTRB(20, 20, 20, 0),

@@ -153,7 +153,7 @@ class ExtrasScreen extends StatelessWidget
                    //
                     TextLabelWidget('Languages'),
                     const SizedBox(height: 10,),
-                    InputPrefab(
+                    RoundedTextField(
                       labelText: 'e.g Japanese', onSaved: (String) {},),
                     NextButton(text: 'Add',
                         onPressed: () {}),

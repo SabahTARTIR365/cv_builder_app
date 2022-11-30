@@ -136,29 +136,29 @@ class EducationScreen extends StatelessWidget
                     const SizedBox(height: 15,),
                     TextLabelWidget('Degree '),
                     const SizedBox(height: 10,),
-                    InputPrefab(
+                    RoundedTextField(
                       labelText: 'e.g Bachelor, master', onSaved: (String) {},),
                     const SizedBox(height: 10,),
                     TextLabelWidget('Name of school/institution'),
                     const SizedBox(height: 10,),
-                    InputPrefab(labelText: 'e.g. City College of San Francisco', onSaved: (String) {},),
+                    RoundedTextField(labelText: 'e.g. City College of San Francisco', onSaved: (String) {},),
                     const SizedBox(height: 10,),
                     TextLabelWidget('Location '),
                     const SizedBox(height: 10,),
-                    InputPrefab(labelText: 'e.g. San Francisco, CA',
+                    RoundedTextField(labelText: 'e.g. San Francisco, CA',
                       onSaved: (String) {},),
                     const SizedBox(height: 10,),
                     TextLabelWidget('Start Date'),
                     const SizedBox(height: 10,),
                     // field
-                    DateTextField(textEditingController: provider.textEditingControllerStartDate,
+                    DateTextField(textEditingController: provider.workStartDateController,
                         labelText: 'Enter Date',  onTap: () async {
                           provider.createStartDatePicker(context);
                         }),
                     const SizedBox(height: 10,),
                     TextLabelWidget('Graduation year Date'),
                     const SizedBox(height: 10,),
-                    DateTextField(textEditingController: provider.textEditingControllerEndDate,
+                    DateTextField(textEditingController: provider.workEndDateController,
                         labelText: '',  onTap: () async {
                           provider.createEndDatePicker(context);
                         }),

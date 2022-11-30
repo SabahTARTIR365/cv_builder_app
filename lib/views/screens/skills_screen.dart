@@ -145,11 +145,11 @@ class SkillsScreen extends StatelessWidget
                     const SizedBox(height: 15,),
                     TextLabelWidget('Skills '),
                     const SizedBox(height: 10,),
-                    InputPrefab(
+                    RoundedTextField(
                       labelText: 'e.g Responsible', onSaved: (String) {},),
                     NextButton(text: 'Add',
                         onPressed: () {
-                   String data = provider.textEditingController.text;
+                   String data = provider.textEditingSkillController.text;
                    print(data);
                    Provider.of<CvProvider>(context, listen: false).insertNewSkill();
                    print(data);

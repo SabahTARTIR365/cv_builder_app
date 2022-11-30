@@ -130,29 +130,29 @@ class WorkScreen extends StatelessWidget
                     const SizedBox(height: 15,),
                     TextLabelWidget('Title/Position '),
                     const SizedBox(height: 10,),
-                    InputPrefab(
+                    RoundedTextField(
                       labelText: 'Software engineer', onSaved: (String) {},),
                     const SizedBox(height: 10,),
                     TextLabelWidget('Company'),
                     const SizedBox(height: 10,),
-                    InputPrefab(labelText: 'e.g Apple', onSaved: (String) {},),
+                    RoundedTextField(labelText: 'e.g Apple', onSaved: (String) {},),
                     const SizedBox(height: 10,),
                     TextLabelWidget('Location(City, State) '),
                     const SizedBox(height: 10,),
-                    InputPrefab(labelText: 'e.g. San Francisco, CA',
+                    RoundedTextField(labelText: 'e.g. San Francisco, CA',
                       onSaved: (String) {},),
                     const SizedBox(height: 10,),
                     TextLabelWidget('Start Date'),
                     const SizedBox(height: 10,),
                     // field
-                    DateTextField(textEditingController: provider.textEditingControllerStartDate,
+                    DateTextField(textEditingController: provider.workStartDateController,
                         labelText: 'Enter Date',  onTap: () async {
                       provider.createStartDatePicker(context);
                     }),
                     const SizedBox(height: 10,),
                     TextLabelWidget('End Date'),
                     const SizedBox(height: 10,),
-                    DateTextField(textEditingController: provider.textEditingControllerEndDate,
+                    DateTextField(textEditingController: provider.workEndDateController,
                         labelText: 'Enter End Date',  onTap: () async {
                           provider.createEndDatePicker(context);
                         }),

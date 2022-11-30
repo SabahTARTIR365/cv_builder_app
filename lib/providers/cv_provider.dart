@@ -5,10 +5,41 @@ import 'package:intl/intl.dart';
 
 class CvProvider extends ChangeNotifier
 {
-  TextEditingController textEditingControllerStartDate = TextEditingController();
-  TextEditingController textEditingControllerEndDate = TextEditingController();
+  //info
+  TextEditingController nameController = TextEditingController();
+  TextEditingController professionController = TextEditingController();
+  TextEditingController phoneNoController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController linkedInController = TextEditingController();
+ //work
+  TextEditingController titleController = TextEditingController();
+  TextEditingController companyController = TextEditingController();
+  TextEditingController workLocationController = TextEditingController();
+  TextEditingController workStartDateController = TextEditingController();
+  TextEditingController workEndDateController = TextEditingController();
+  TextEditingController workAchievementController = TextEditingController();
+
+  //edu
+  TextEditingController degreeController = TextEditingController();
+  TextEditingController schoolNameController = TextEditingController();
+  TextEditingController schoolLocationController = TextEditingController();
+  TextEditingController textEditingControllerEducationStartDate = TextEditingController();
+  TextEditingController textEditingControllerEducationEndDate = TextEditingController();
+  TextEditingController schoolAchievementController = TextEditingController();
+  //skill
+  TextEditingController textEditingSkillController = TextEditingController();
+  //summary
+   TextEditingController summaryController = TextEditingController();
+   //extras
+  TextEditingController languagesController = TextEditingController();
+  TextEditingController projectsController = TextEditingController();
+  TextEditingController honorsController = TextEditingController();
+
+
+  //importnt one need to check case-------------------------------------------------------------
   TextEditingController editableWidgetController = TextEditingController();
-  TextEditingController textEditingController = TextEditingController();
+
 
   String description='start' ;
   List<SkillModel> allSkill = [];
@@ -16,11 +47,11 @@ class CvProvider extends ChangeNotifier
     notifyListeners();
   }
   insertNewSkill() {
-    SkillModel skillModel = SkillModel(title: textEditingController.text);
+    SkillModel skillModel = SkillModel(title: textEditingSkillController.text);
     print('inside insert function sabah');
     print( skillModel .title);
     allSkill.add(skillModel);
-    textEditingController.clear();
+    textEditingSkillController.clear();
     getAllSkills();
   }
 
@@ -56,7 +87,7 @@ class CvProvider extends ChangeNotifier
       String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate); // format date in required form here we use yyyy-MM-dd that means time is removed
       print(formattedDate); //formatted date output using intl package =>  2022-07-04
       //You can format date as per your need
-      textEditingControllerStartDate.text = formattedDate; //set foratted date to TextField value.
+      workStartDateController.text = formattedDate; //set foratted date to TextField value.
     }
     else
       {
@@ -78,7 +109,7 @@ class CvProvider extends ChangeNotifier
       String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate); // format date in required form here we use yyyy-MM-dd that means time is removed
       print(formattedDate); //formatted date output using intl package =>  2022-07-04
       //You can format date as per your need
-      textEditingControllerEndDate.text = formattedDate; //set foratted date to TextField value.
+      workEndDateController.text = formattedDate; //set foratted date to TextField value.
     }
     else
     {
