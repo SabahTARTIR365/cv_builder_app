@@ -12,9 +12,12 @@ import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'data/db_helper.dart';
 import 'views/screens/work_screen.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await DbHelper.dbHelper.initDatabase();
   runApp( InitApp()  /*const MaterialApp(home: MyApp(),//BuildCvScreen(),// )*/
   );
 }
