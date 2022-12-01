@@ -8,7 +8,7 @@ class RoundedTextField extends StatelessWidget {
   final  TextEditingController? controller;
 
 
-   RoundedTextField({@required this.labelText, @required this.onSaved, this.controller});
+   const RoundedTextField({@required this.labelText, @required this.onSaved, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,11 @@ class RoundedTextField extends StatelessWidget {
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,
       ),
-      //initialValue: '',
-      validator: (String? value) {
-        return value == null ? '$labelText is required' : null;
-      },
+
+      validator: (value){
+        if (value!.isEmpty||value==null)
+          return 'This field is required' ;
+        },
       onSaved: onSaved,
     );
   }

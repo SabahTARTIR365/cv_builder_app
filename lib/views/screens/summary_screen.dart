@@ -3,7 +3,7 @@ import 'package:cv_builder_app/providers/cv_provider.dart';
 import 'package:cv_builder_app/views/screens/extras_screen.dart';
 import 'package:cv_builder_app/views/widgets/date_text_field.dart';
 import 'package:cv_builder_app/views/widgets/editable_text_widget.dart';
-import 'package:cv_builder_app/views/widgets/input_prefab.dart';
+import 'package:cv_builder_app/views/widgets/rounded_text_field.dart';
 import 'package:cv_builder_app/views/widgets/next_button.dart';
 import 'package:cv_builder_app/views/widgets/text_label_widget.dart';
 import 'package:flutter/cupertino.dart';

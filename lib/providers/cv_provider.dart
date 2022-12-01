@@ -12,6 +12,8 @@ class CvProvider extends ChangeNotifier
   TextEditingController emailController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController linkedInController = TextEditingController();
+
+  GlobalKey<FormState>formKeyInfo= GlobalKey<FormState>();
  //work
   TextEditingController titleController = TextEditingController();
   TextEditingController companyController = TextEditingController();

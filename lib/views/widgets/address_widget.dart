@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class AddressWidget extends StatelessWidget {
   final String? labelText;
   final Function(String?)? onSaved;
+  final  TextEditingController? controller;
 
-  AddressWidget({@required this.labelText, @required this.onSaved});
+  AddressWidget({@required this.labelText, @required this.onSaved, this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       keyboardType: TextInputType.multiline,
       maxLines: null,//Normal textInputField will be displayed
       decoration: InputDecoration(
@@ -28,9 +30,10 @@ class AddressWidget extends StatelessWidget {
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,
       ),
-      initialValue: '',
-      validator: (String? value) {
-        return value == null ? '$labelText is required' : null;
+      //initialValue: '',
+      validator: (value){
+        if (value!.isEmpty||value==null)
+          return 'This field is required' ;
       },
       onSaved: onSaved,
     );

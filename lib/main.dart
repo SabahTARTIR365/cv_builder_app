@@ -15,9 +15,9 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'data/db_helper.dart';
 import 'views/screens/work_screen.dart';
 
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await DbHelper.dbHelper.initDatabase();
+void main() {//async{
+ // WidgetsFlutterBinding.ensureInitialized();
+  //await DbHelper.dbHelper.initDatabase();
   runApp( InitApp()  /*const MaterialApp(home: MyApp(),//BuildCvScreen(),// )*/
   );
 }
