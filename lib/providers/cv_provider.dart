@@ -1,4 +1,5 @@
 import 'package:cv_builder_app/data/db_helper.dart';
+import 'package:cv_builder_app/models/education_model.dart';
 import 'package:cv_builder_app/models/info_model.dart';
 import 'package:cv_builder_app/models/skill_model.dart';
 import 'package:cv_builder_app/models/work_model.dart';
@@ -60,13 +61,12 @@ class CvProvider extends ChangeNotifier
  );
     await DbHelper.dbHelper.insertNewWork(workModel);
     print ('done for personal added to db');
-    _createPdf();
+    //createPdf();
 
   }
 
-
-
   //edu
+  EducationModel? educationModel;
   TextEditingController degreeController = TextEditingController();
   TextEditingController schoolNameController = TextEditingController();
   TextEditingController schoolLocationController = TextEditingController();
@@ -74,6 +74,21 @@ class CvProvider extends ChangeNotifier
   TextEditingController eduEndDateController = TextEditingController();
   TextEditingController schoolAchievementController = TextEditingController();
   GlobalKey<FormState>formKeyEdu= GlobalKey<FormState>();
+  createEduModel()
+  {
+    educationModel=EducationModel(
+       degree: degreeController.text,
+        schoolName: schoolNameController.text,
+        location: schoolLocationController.text,
+        startDate: eduStartDateController.text,
+        endDate: eduEndDateController.text,
+        achievement: schoolAchievementController.text
+    );
+
+    print ('done for edu to db');
+  }
+
+
   //skill
   TextEditingController textEditingSkillController = TextEditingController();
   GlobalKey<FormState>formKeySkill= GlobalKey<FormState>();
@@ -90,24 +105,42 @@ class CvProvider extends ChangeNotifier
   //importnt one need to check case-------------------------------------------------------------
   TextEditingController editableWidgetController = TextEditingController();
 //pdf
-  Future <void>_createPdf ()async{
+  Future <void> createPdf ()async{
     PdfDocument document=  PdfDocument();
     final page= document.pages.add();//to add pages
     //---------------------INFO PART-----------------------
     //to add text to the pdf
-    page.graphics.drawString(nameController.text, PdfStandardFont(PdfFontFamily.helvetica, 20),bounds: Rect.fromLTWH(10, 10, 500, 40));
+    page.graphics.drawString(nameController.text, PdfStandardFont(PdfFontFamily.helvetica, 27),bounds: Rect.fromLTWH(10, 5, 500, 40));
     page.graphics.drawLine(
         PdfPen(PdfColor(0,0,255), width: 1),
-        Offset(10, 32),
-        Offset(500, 32));
+        Offset(10, 35),
+        Offset(500, 35));
     page.graphics.drawString(professionController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 40, 500, 40));
     page.graphics.drawString(phoneNoController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 60, 500, 40));
     page.graphics.drawString(emailController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 80, 500, 40));
     page.graphics.drawString(addressController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 100, 500, 40));
     page.graphics.drawString(linkedInController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 120, 500, 40));
 //----------------------------work part---------------------
-    //to add images to the pdf
-    //page.graphics.drawImage(PdfBitmap(await  _readImageData('poster.png')), Rect.fromLTWH(0, 100, 440, 550));
+    page.graphics.drawString("Experience", PdfStandardFont(PdfFontFamily.helvetica, 20),bounds: Rect.fromLTWH(10, 150, 500, 40));
+    page.graphics.drawLine(PdfPen(PdfColor(0,0,255), width: 1), Offset(10, 175), Offset(500, 175));
+    page.graphics.drawString(titleController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 200, 500, 40));
+    page.graphics.drawString(companyController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 220, 500, 40));
+    page.graphics.drawString(workLocationController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(100, 220, 500, 40));
+    page.graphics.drawString(workStartDateController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 240, 500, 40));
+    page.graphics.drawString(workEndDateController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(110, 240, 500, 40));
+    page.graphics.drawString(workAchievementController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 260, 500, 40));
+//----------------------------Edu part---------------------
+    page.graphics.drawString("Education", PdfStandardFont(PdfFontFamily.helvetica, 20),bounds: Rect.fromLTWH(10, 300, 500, 40));
+    page.graphics.drawLine(PdfPen(PdfColor(0,0,255), width: 1), Offset(10, 325), Offset(500, 325));
+
+    page.graphics.drawString(degreeController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 350, 500, 40));
+    page.graphics.drawString(schoolNameController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 370, 500, 40));
+    page.graphics.drawString(schoolLocationController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(100, 370, 500, 40));
+    page.graphics.drawString(eduStartDateController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 390, 500, 40));
+    page.graphics.drawString(eduEndDateController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(110, 390, 500, 40));
+    page.graphics.drawString( schoolAchievementController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 410, 700, 80));
+
+
     List<int>bytes=await document.save();
     document.dispose();
     saveAndLaunchFile(bytes, 'output.pdf');
