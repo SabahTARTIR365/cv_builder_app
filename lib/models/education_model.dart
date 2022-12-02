@@ -1,15 +1,15 @@
 class EducationModel
 {
-  String? title;
-  String? company;
+  String? degree;
+  String? schoolName;
   String? location;
   String? startDate;
   String? endDate;
   String? achievement;
 
   EducationModel({
-    this.title,
-    this.company,
+    this.degree,
+    this.schoolName,
     this.location,
     this.startDate,
     this.endDate,
@@ -18,8 +18,8 @@ class EducationModel
 
   Map<String, dynamic> toMap() {
     return {
-      'title':title,
-      'company': company,
+      'degree':degree,
+      'schoolName': schoolName,
       'location':location,
       'startDate': startDate,
       'endDate':endDate,
