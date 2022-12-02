@@ -9,7 +9,9 @@ import 'package:provider/provider.dart';
 class EditableTextWidget extends StatelessWidget
 {
 // String description='start' ;
+  final  TextEditingController controller;
 
+  const EditableTextWidget({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +29,19 @@ return Consumer<CvProvider>(builder: (context, provider, x) {
 
 
             },//set state for this value
-      provider.editableWidgetController.text,
+      controller.text,
       label: 'Description',
       maxLines: 10,
       actions: MarkdownType.values,
-      controller: provider.editableWidgetController,
+      controller: controller,
+      validators: (value){
+        if (value!.isEmpty||value==null)
+          return 'This field is required' ;
+      },
     ),
     TextButton(
       onPressed: () {
-        provider.editableWidgetController.clear();
+        controller.clear();
       },
       child: Text('Clear'),
     ),
