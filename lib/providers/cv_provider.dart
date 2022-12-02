@@ -1,6 +1,7 @@
 import 'package:cv_builder_app/data/db_helper.dart';
 import 'package:cv_builder_app/models/info_model.dart';
 import 'package:cv_builder_app/models/skill_model.dart';
+import 'package:cv_builder_app/models/work_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -33,32 +34,57 @@ class CvProvider extends ChangeNotifier
     );
     await DbHelper.dbHelper.insertNewInfo(infoModel);
     print ('done for personal added to db');
-    _createPdf();
+    //ADD IT TO FINISH BUTTON
+   // _createPdf();
 
   }
  //work
+  WorkModel ?workModel;
   TextEditingController titleController = TextEditingController();
   TextEditingController companyController = TextEditingController();
   TextEditingController workLocationController = TextEditingController();
   TextEditingController workStartDateController = TextEditingController();
   TextEditingController workEndDateController = TextEditingController();
   TextEditingController workAchievementController = TextEditingController();
+  GlobalKey<FormState>formKeyWork= GlobalKey<FormState>();
+
+  createWorkModel()
+  async{
+ workModel=WorkModel(
+   title: titleController.text,
+   company: companyController.text,
+   location: workLocationController.text,
+   startDate: workStartDateController.text,
+   endDate: workEndDateController.text,
+   achievement: workAchievementController.text
+ );
+    await DbHelper.dbHelper.insertNewWork(workModel);
+    print ('done for personal added to db');
+    _createPdf();
+
+  }
+
+
 
   //edu
   TextEditingController degreeController = TextEditingController();
   TextEditingController schoolNameController = TextEditingController();
   TextEditingController schoolLocationController = TextEditingController();
-  TextEditingController textEditingControllerEducationStartDate = TextEditingController();
-  TextEditingController textEditingControllerEducationEndDate = TextEditingController();
+  TextEditingController eduStartDateController = TextEditingController();
+  TextEditingController eduEndDateController = TextEditingController();
   TextEditingController schoolAchievementController = TextEditingController();
+  GlobalKey<FormState>formKeyEdu= GlobalKey<FormState>();
   //skill
   TextEditingController textEditingSkillController = TextEditingController();
+  GlobalKey<FormState>formKeySkill= GlobalKey<FormState>();
   //summary
    TextEditingController summaryController = TextEditingController();
+  GlobalKey<FormState>formKeySummary= GlobalKey<FormState>();
    //extras
   TextEditingController languagesController = TextEditingController();
   TextEditingController projectsController = TextEditingController();
   TextEditingController honorsController = TextEditingController();
+  GlobalKey<FormState>formKeyExtra= GlobalKey<FormState>();
 
 
   //importnt one need to check case-------------------------------------------------------------
@@ -119,7 +145,7 @@ class CvProvider extends ChangeNotifier
   {
     notifyListeners();
   }
-  createStartDatePicker(BuildContext context)async
+  createStartDatePicker(BuildContext context,TextEditingController controller)async
 {
   //when click we have to show the datepicker
    DateTime? pickedDate = await showDatePicker(
@@ -134,14 +160,14 @@ class CvProvider extends ChangeNotifier
       String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate); // format date in required form here we use yyyy-MM-dd that means time is removed
       print(formattedDate); //formatted date output using intl package =>  2022-07-04
       //You can format date as per your need
-      workStartDateController.text = formattedDate; //set foratted date to TextField value.
+     controller.text = formattedDate; //set foratted date to TextField value.
     }
     else
       {
     print("Date is not selected");
       }
 }
-  createEndDatePicker(BuildContext context)async
+  createEndDatePicker(BuildContext context,TextEditingController controller)async
   {
     //when click we have to show the datepicker
     DateTime? pickedDate = await showDatePicker(
@@ -156,7 +182,7 @@ class CvProvider extends ChangeNotifier
       String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate); // format date in required form here we use yyyy-MM-dd that means time is removed
       print(formattedDate); //formatted date output using intl package =>  2022-07-04
       //You can format date as per your need
-      workEndDateController.text = formattedDate; //set foratted date to TextField value.
+      controller.text = formattedDate; //set foratted date to TextField value.
     }
     else
     {
