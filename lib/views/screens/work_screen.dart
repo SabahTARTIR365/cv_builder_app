@@ -115,65 +115,71 @@ class WorkScreen extends StatelessWidget
               // color: Colors.red,
               child: SingleChildScrollView(
                 child:
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                Form(
+                  key: provider.formKeyWork,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
 
-                    Text('Work Experience', style:
-                    TextStyle(fontSize: 16,
-                        color: appBlue,
-                        fontWeight: FontWeight.bold),),
-                    const SizedBox(height: 5,),
-                    Text(
-                      'Great! Lets fill out your work experience next', style:
-                    TextStyle(fontSize: 14, color: appBlue),),
-                    const SizedBox(height: 15,),
-                    TextLabelWidget('Title/Position '),
-                    const SizedBox(height: 10,),
-                    RoundedTextField(
-                      labelText: 'Software engineer', onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Company'),
-                    const SizedBox(height: 10,),
-                    RoundedTextField(labelText: 'e.g Apple', onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Location(City, State) '),
-                    const SizedBox(height: 10,),
-                    RoundedTextField(labelText: 'e.g. San Francisco, CA',
-                      onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Start Date'),
-                    const SizedBox(height: 10,),
-                    // field
-                    DateTextField(textEditingController: provider.workStartDateController,
-                        labelText: 'Enter Date',  onTap: () async {
-                      provider.createStartDatePicker(context);
-                    }),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('End Date'),
-                    const SizedBox(height: 10,),
-                    DateTextField(textEditingController: provider.workEndDateController,
-                        labelText: 'Enter End Date',  onTap: () async {
-                          provider.createEndDatePicker(context);
-                        }),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Functions and achievements'),
-                    const SizedBox(height: 10,),
-                    EditableTextWidget(),// here some fixes
-                    const SizedBox(height: 10,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        NextButton(text: 'Next:Edu', onPressed: () {
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-                            return EducationScreen();
-                          }));
+                      Text('Work Experience', style:
+                      TextStyle(fontSize: 16,
+                          color: appBlue,
+                          fontWeight: FontWeight.bold),),
+                      const SizedBox(height: 5,),
+                      Text(
+                        'Great! Lets fill out your work experience next', style:
+                      TextStyle(fontSize: 14, color: appBlue),),
+                      const SizedBox(height: 15,),
+                      TextLabelWidget('Title/Position '),
+                      const SizedBox(height: 10,),
+                      RoundedTextField(
+                        labelText: 'Software engineer', onSaved: (String) {},controller: provider.titleController,),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Company'),
+                      const SizedBox(height: 10,),
+                      RoundedTextField(labelText: 'e.g Apple', onSaved: (String) {},controller: provider.companyController,),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Location(City, State) '),
+                      const SizedBox(height: 10,),
+                      RoundedTextField(labelText: 'e.g. San Francisco, CA', onSaved: (String) {},controller: provider.workLocationController,),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Start Date'),
+                      const SizedBox(height: 10,),
+                      // field
+                      DateTextField(textEditingController: provider.workStartDateController,
+                          labelText: 'Enter Date',  onTap: () async {
+                        provider.createStartDatePicker(context,provider.workStartDateController);
+                      }),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('End Date'),
+                      const SizedBox(height: 10,),
+                      DateTextField(textEditingController: provider.workEndDateController,
+                          labelText: 'Enter End Date',  onTap: () async {
+                            provider.createEndDatePicker(context, provider.workEndDateController);
+                          }),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Functions and achievements'),
+                      const SizedBox(height: 10,),
+                      EditableTextWidget(controller: provider.workAchievementController,),// here some fixes
+                      const SizedBox(height: 10,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          NextButton(text: 'Next:Edu', onPressed: () {
+                            bool isValid= provider.formKeyWork.currentState!.validate();
+                            print('here here');
+                            print(isValid);
+                            if (isValid){
+                                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                                       return EducationScreen();
+                                                }));
+                                        }
 
-
-                        },),
-                      ],
-                    ),
-                  ],
+                          },),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),),
             ),
           ],);

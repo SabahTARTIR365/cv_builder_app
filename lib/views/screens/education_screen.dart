@@ -121,65 +121,72 @@ class EducationScreen extends StatelessWidget
               // color: Colors.red,
               child: SingleChildScrollView(
                 child:
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                Form(
+                  key:provider.formKeyEdu,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
 
-                    const Text('Awesome! Now, what qualifications do you have?', style:
-                    TextStyle(fontSize: 16,
-                        color: appBlue,
-                        fontWeight: FontWeight.bold),),
-                    const SizedBox(height: 5,),
-                    const Text(
-                      'Start with your most recent period of education and work backwards. '
-                      , style: TextStyle(fontSize: 14, color: appBlue),),
-                    const SizedBox(height: 15,),
-                    TextLabelWidget('Degree '),
-                    const SizedBox(height: 10,),
-                    RoundedTextField(
-                      labelText: 'e.g Bachelor, master', onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Name of school/institution'),
-                    const SizedBox(height: 10,),
-                    RoundedTextField(labelText: 'e.g. City College of San Francisco', onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Location '),
-                    const SizedBox(height: 10,),
-                    RoundedTextField(labelText: 'e.g. San Francisco, CA',
-                      onSaved: (String) {},),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Start Date'),
-                    const SizedBox(height: 10,),
-                    // field
-                    DateTextField(textEditingController: provider.workStartDateController,
-                        labelText: 'Enter Date',  onTap: () async {
-                          provider.createStartDatePicker(context);
-                        }),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Graduation year Date'),
-                    const SizedBox(height: 10,),
-                    DateTextField(textEditingController: provider.workEndDateController,
-                        labelText: '',  onTap: () async {
-                          provider.createEndDatePicker(context);
-                        }),
-                    const SizedBox(height: 10,),
-                    TextLabelWidget('Description and achievements'),
-                    const SizedBox(height: 10,),
-                    EditableTextWidget(),// here some fixes
-                    const SizedBox(height: 10,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        NextButton(text: 'Next:Skills', onPressed: () {
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-                            return SkillsScreen();
-                          }));
+                      const Text('Awesome! Now, what qualifications do you have?', style:
+                      TextStyle(fontSize: 16,
+                          color: appBlue,
+                          fontWeight: FontWeight.bold),),
+                      const SizedBox(height: 5,),
+                      const Text(
+                        'Start with your most recent period of education and work backwards. '
+                        , style: TextStyle(fontSize: 14, color: appBlue),),
+                      const SizedBox(height: 15,),
+                      TextLabelWidget('Degree '),
+                      const SizedBox(height: 10,),
+                      RoundedTextField(
+                        labelText: 'e.g Bachelor, master', onSaved: (String) {},controller: provider.degreeController,),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Name of school/institution'),
+                      const SizedBox(height: 10,),
+                      RoundedTextField(labelText: 'e.g. City College of San Francisco', onSaved: (String) {},controller: provider.schoolNameController,),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Location '),
+                      const SizedBox(height: 10,),
+                      RoundedTextField(labelText: 'e.g. San Francisco, CA', onSaved: (String) {},controller: provider.schoolLocationController,),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Start Date'),
+                      const SizedBox(height: 10,),
+                      // field
+                      DateTextField(textEditingController: provider.eduStartDateController,
+                          labelText: 'Enter Date',  onTap: () async {
+                            provider.createStartDatePicker(context,provider.eduStartDateController);
+                          }),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Graduation year Date'),
+                      const SizedBox(height: 10,),
+                      DateTextField(textEditingController: provider.eduEndDateController,
+                          labelText: '',  onTap: () async {
+                            provider.createEndDatePicker(context,provider.eduEndDateController);
+                          }),
+                      const SizedBox(height: 10,),
+                      TextLabelWidget('Description and achievements'),
+                      const SizedBox(height: 10,),
+                      EditableTextWidget(controller: provider.schoolAchievementController,),// here some fixes
+                      const SizedBox(height: 10,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
 
+                          NextButton(text: 'Next:Skills', onPressed: () {
 
-                        },),
-                      ],
-                    ),
-                  ],
+                            bool isValid= provider.formKeyEdu.currentState!.validate();
+
+                            if (isValid){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                               return SkillsScreen();
+                             }));
+
+                            }
+                          },),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),),
             ),
           ],);

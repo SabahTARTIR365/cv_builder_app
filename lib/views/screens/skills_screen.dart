@@ -130,53 +130,54 @@ class SkillsScreen extends StatelessWidget
               // color: Colors.red,
               child: SingleChildScrollView(
                 child:
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                Form(
+                  key: provider.formKeySkill,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
 
-                    const Text('Skills', style:
-                    TextStyle(fontSize: 16,
-                        color: appBlue,
-                        fontWeight: FontWeight.bold),),
-                    const SizedBox(height: 5,),
-                    const Text(
-                      'Almost finished the basics! Just add a list of skills '
-                      , style: TextStyle(fontSize: 14, color: appBlue),),
-                    const SizedBox(height: 15,),
-                    TextLabelWidget('Skills '),
-                    const SizedBox(height: 10,),
-                    RoundedTextField(
-                      labelText: 'e.g Responsible', onSaved: (String) {},controller: provider.textEditingSkillController),
-                    NextButton(text: 'Add',
-                        onPressed: () {
-                   String data = provider.textEditingSkillController.text;
-                   print(data);
-                   Provider.of<CvProvider>(context, listen: false).insertNewSkill();
-                   print(data);
-                          isDone=1;
-                        }),
-                      isDone==1?  ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          shrinkWrap: true,
-                         itemCount: provider.allSkill.length,
-                         itemBuilder: (context, index) {
-                            return SkillWidget(provider.allSkill[index]);
-                             }):Text('no data inserted'),
+                      const Text('Skills', style:
+                      TextStyle(fontSize: 16,
+                          color: appBlue,
+                          fontWeight: FontWeight.bold),),
+                      const SizedBox(height: 5,),
+                      const Text(
+                        'Almost finished the basics! Just add a list of skills '
+                        , style: TextStyle(fontSize: 14, color: appBlue),),
+                      const SizedBox(height: 15,),
+                      TextLabelWidget('Skills '),
+                      const SizedBox(height: 10,),
+                      RoundedTextField(
+                        labelText: 'e.g Responsible', onSaved: (String) {},controller: provider.textEditingSkillController),
+                      NextButton(text: 'Add',
+                          onPressed: () {
 
-                    const SizedBox(height: 10,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        NextButton(text: 'Next:Sum', onPressed: () {
-                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-                            return SummaryScreen();
-                          }));
+                               Provider.of<CvProvider>(context, listen: false).insertNewSkill();
+                               isDone=1;
+                          }),
+                        isDone==1?  ListView.builder(
+                            scrollDirection: Axis.vertical,
+                            shrinkWrap: true,
+                           itemCount: provider.allSkill.length,
+                           itemBuilder: (context, index) {
+                              return SkillWidget(provider.allSkill[index]);
+                               }):Text('no data inserted'),
+
+                      const SizedBox(height: 10,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          NextButton(text: 'Next:Sum', onPressed: () {
+                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                              return SummaryScreen();
+                            }));
 
 
-                        },),
-                      ],
-                    ),
-                  ],
+                          },),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),),
             ),
           ],);

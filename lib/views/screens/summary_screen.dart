@@ -148,7 +148,7 @@ class SummaryScreen extends StatelessWidget
                     const SizedBox(height: 15,),
 
                     const SizedBox(height: 10,),
-                    EditableTextWidget(),// here some fixes
+                    EditableTextWidget(controller: provider.summaryController,),// here some fixes
                     const SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
