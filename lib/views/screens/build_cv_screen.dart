@@ -146,9 +146,9 @@ class BuildCvScreen extends StatelessWidget
                              if (isValid){
                                //create info model
                                provider.createPersonalInformation();
-                              /* Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
                                  return WorkScreen();
-                               }));*/
+                               }));
 
                              }
                            }, ),

@@ -67,19 +67,19 @@ class CvProvider extends ChangeNotifier
   Future <void>_createPdf ()async{
     PdfDocument document=  PdfDocument();
     final page= document.pages.add();//to add pages
+    //---------------------INFO PART-----------------------
     //to add text to the pdf
     page.graphics.drawString(nameController.text, PdfStandardFont(PdfFontFamily.helvetica, 20),bounds: Rect.fromLTWH(10, 10, 500, 40));
     page.graphics.drawLine(
         PdfPen(PdfColor(0,0,255), width: 1),
         Offset(10, 32),
         Offset(500, 32));
-
     page.graphics.drawString(professionController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 40, 500, 40));
     page.graphics.drawString(phoneNoController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 60, 500, 40));
     page.graphics.drawString(emailController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 80, 500, 40));
     page.graphics.drawString(addressController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 100, 500, 40));
     page.graphics.drawString(linkedInController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 120, 500, 40));
-
+//----------------------------work part---------------------
     //to add images to the pdf
     //page.graphics.drawImage(PdfBitmap(await  _readImageData('poster.png')), Rect.fromLTWH(0, 100, 440, 550));
     List<int>bytes=await document.save();
