@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class InfoModel {
   String? name;
   String? profession;
-  int? phoneNo;
+  String? phoneNo;
   String? email;
   String? address;
   String? linkedinLink;
@@ -30,7 +30,7 @@ class InfoModel {
 
   factory InfoModel.fromMap(Map<String, dynamic> map) {
     return InfoModel(
-      phoneNo: map['phoneNo']?.toInt(),
+      phoneNo: map['phoneNo'],
       profession: map['profession'],
 
     );

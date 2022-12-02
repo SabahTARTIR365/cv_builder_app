@@ -1,11 +1,17 @@
+import 'package:cv_builder_app/data/db_helper.dart';
+import 'package:cv_builder_app/models/info_model.dart';
 import 'package:cv_builder_app/models/skill_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:syncfusion_flutter_pdf/pdf.dart';
+
+import '../mobile.dart';
 
 class CvProvider extends ChangeNotifier
 {
   //info
+  InfoModel ?infoModel;
   TextEditingController nameController = TextEditingController();
   TextEditingController professionController = TextEditingController();
   TextEditingController phoneNoController = TextEditingController();
@@ -14,6 +20,22 @@ class CvProvider extends ChangeNotifier
   TextEditingController linkedInController = TextEditingController();
 
   GlobalKey<FormState>formKeyInfo= GlobalKey<FormState>();
+
+  createPersonalInformation()
+  async{
+    infoModel=InfoModel(
+      name:nameController.text,
+      profession:professionController.text,
+      phoneNo: phoneNoController.text,
+      email: emailController.text,
+      address: addressController.text,
+      linkedinLink: linkedInController.text
+    );
+    await DbHelper.dbHelper.insertNewInfo(infoModel);
+    print ('done for personal added to db');
+    _createPdf();
+
+  }
  //work
   TextEditingController titleController = TextEditingController();
   TextEditingController companyController = TextEditingController();
@@ -41,7 +63,30 @@ class CvProvider extends ChangeNotifier
 
   //importnt one need to check case-------------------------------------------------------------
   TextEditingController editableWidgetController = TextEditingController();
+//pdf
+  Future <void>_createPdf ()async{
+    PdfDocument document=  PdfDocument();
+    final page= document.pages.add();//to add pages
+    //to add text to the pdf
+    page.graphics.drawString(nameController.text, PdfStandardFont(PdfFontFamily.helvetica, 20),bounds: Rect.fromLTWH(10, 10, 500, 40));
+    page.graphics.drawLine(
+        PdfPen(PdfColor(0,0,255), width: 1),
+        Offset(10, 32),
+        Offset(500, 32));
 
+    page.graphics.drawString(professionController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 40, 500, 40));
+    page.graphics.drawString(phoneNoController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 60, 500, 40));
+    page.graphics.drawString(emailController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 80, 500, 40));
+    page.graphics.drawString(addressController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 100, 500, 40));
+    page.graphics.drawString(linkedInController.text, PdfStandardFont(PdfFontFamily.helvetica, 16),bounds: Rect.fromLTWH(20, 120, 500, 40));
+
+    //to add images to the pdf
+    //page.graphics.drawImage(PdfBitmap(await  _readImageData('poster.png')), Rect.fromLTWH(0, 100, 440, 550));
+    List<int>bytes=await document.save();
+    document.dispose();
+    saveAndLaunchFile(bytes, 'output.pdf');
+  }
+  //pdf
 
   String description='start' ;
   List<SkillModel> allSkill = [];

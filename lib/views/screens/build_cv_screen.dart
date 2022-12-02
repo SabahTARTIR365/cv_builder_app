@@ -140,15 +140,15 @@ class BuildCvScreen extends StatelessWidget
                          mainAxisAlignment: MainAxisAlignment.end,
                          children: [
                            NextButton(text: 'Next:Work', onPressed: () {
-
                              bool isValid= provider.formKeyInfo.currentState!.validate();
                              print('here here');
                              print(isValid);
                              if (isValid){
                                //create info model
-                               Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                               provider.createPersonalInformation();
+                              /* Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
                                  return WorkScreen();
-                               }));
+                               }));*/
 
                              }
                            }, ),
