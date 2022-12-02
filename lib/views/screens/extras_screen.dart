@@ -173,6 +173,7 @@ class ExtrasScreen extends StatelessWidget
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         NextButton(text: 'Finish', onPressed: () {
+                          provider.createPdf();
                           /*Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
                             return SkillsScreen();
                           }));*/
