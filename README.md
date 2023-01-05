@@ -1,17 +1,34 @@
-# cv_builder_app
+# CV Builder Mobile App
 
-A new Flutter project.
+A new Flutter project(mobile app) that allow you to build your cv with tracked form, and save it in pdf format. 
 
-## Getting Started
+### Brief information
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+A few resources used in this project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+-  Local Storage (Sqflite)
+-  Use Model–view–controller (MVC) as a software architectural pattern
+-  Use the Provider Pattern
+- Use Singleton Design Pattern
+- [Inspired by this UI and build it from scratch ](https://www.behance.net/gallery/146195263/CVResume-Builder-UI-UX-Case-Study)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# cv_builder_app
+## Some images related to the app:
+- Note: the data is written in the images just random data.
+
+![cvBuilder_1](https://user-images.githubusercontent.com/60351703/210871783-e493f7f8-49e4-41ab-bad0-21831a9d7cee.jpg)
+![cvB2](https://user-images.githubusercontent.com/60351703/210872502-fb2e7b92-15c5-490f-9392-f647b970977b.jpg)
+![cvB3](https://user-images.githubusercontent.com/60351703/210873629-39bb45a5-beee-46a5-84ee-6b0a53d312df.jpg)
+![cvB4](https://user-images.githubusercontent.com/60351703/210873626-611505cf-fe7e-4d4e-87b3-f3dcd654318d.jpg)
+![cvB5](https://user-images.githubusercontent.com/60351703/210873624-336334aa-6ab8-409d-8b22-a4a87fa40e6f.jpg)
+![cvB6](https://user-images.githubusercontent.com/60351703/210874389-97ac4ca8-2327-4863-a020-7396df18f981.jpg)
+- Show the result on finish button 
+
+![cvB7](https://user-images.githubusercontent.com/60351703/210875432-d68893e7-557b-48b1-8c7b-6cd85e855326.jpg)
+![cvB8](https://user-images.githubusercontent.com/60351703/210875426-12649de4-2ca9-4623-b2d3-7a8ee42a429a.jpg)
+
+
+
+
+
+
