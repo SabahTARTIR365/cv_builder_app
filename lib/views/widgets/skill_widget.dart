@@ -19,8 +19,14 @@ late SkillModel skillModel;
       decoration: BoxDecoration(
          color:   Colors.white,
           borderRadius: BorderRadius.circular(10)),
-      child: RaisedButton(
-        color:   Colors.white,
+      child: ElevatedButton(
+
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+          primary: Colors.white,
+          shape: StadiumBorder(),
+        ),
+
         onPressed: () {Provider.of<CvProvider>(context, listen: false).deleteSkill(skillModel);},
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

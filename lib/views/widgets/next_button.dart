@@ -9,10 +9,14 @@ class NextButton extends StatelessWidget
   @override
   Widget build(BuildContext context) {
      return
-       RaisedButton(
+       ElevatedButton(
          onPressed: onPressed,
-         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
-         padding: const EdgeInsets.all(0.0),
+        // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+         style: ElevatedButton.styleFrom(
+           padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+           shape: StadiumBorder(),
+         ),
+         //padding: const EdgeInsets.all(0.0),
          child: Ink(
            decoration: const BoxDecoration(
              gradient: LinearGradient(
