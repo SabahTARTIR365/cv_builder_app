@@ -13,7 +13,7 @@ class NextButton extends StatelessWidget
          onPressed: onPressed,
         // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
          style: ElevatedButton.styleFrom(
-           padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+           padding: const EdgeInsets.all(0.0),
            shape: StadiumBorder(),
          ),
          //padding: const EdgeInsets.all(0.0),

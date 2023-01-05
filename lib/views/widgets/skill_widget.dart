@@ -22,17 +22,19 @@ late SkillModel skillModel;
       child: ElevatedButton(
 
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-          primary: Colors.white,
-          shape: StadiumBorder(),
+         // padding:const EdgeInsets.all(0.0),
+          primary: Colors.grey,
+          shape:RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0)
+          ),
         ),
 
         onPressed: () {Provider.of<CvProvider>(context, listen: false).deleteSkill(skillModel);},
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(skillModel.title ?? 'test'),
-            Icon(Icons.delete,)
+            Text(skillModel.title ?? 'test', style: TextStyle(color: Colors.grey,),),
+            Icon(Icons.delete,color: Colors.grey,)
           ],
         ),
       ),
