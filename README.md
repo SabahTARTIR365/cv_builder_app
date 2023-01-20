@@ -1,6 +1,6 @@
 # CV Builder Mobile App
 
-A new Flutter project(mobile app) that allow you to build your cv with tracked form, and save it in pdf format. 
+A lutter project(mobile app) that allow you to build your cv with tracked form, and save it in pdf format. 
 
 ### Brief information
 
