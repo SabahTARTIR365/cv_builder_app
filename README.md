@@ -18,29 +18,35 @@ A few resources used in this project:
 Getting started wit app:
 - Splash screen:
 
-![cvB_splash](https://user-images.githubusercontent.com/60351703/210884267-09449f2e-fb12-46bf-9dad-45a9accd5fea.jpg)
+![splash](https://user-images.githubusercontent.com/60351703/213819806-f5d6a180-d29b-468c-a7c7-be6700b0c822.jpg))
 
 - Landing screen:
 
-![cvB0LandingPage](https://user-images.githubusercontent.com/60351703/210884268-7302f14c-40d6-4629-8fca-02b3501c82b9.jpg)
+![landing_screen](https://user-images.githubusercontent.com/60351703/213819795-496c28f4-2957-43f8-91d3-e1f98eb15177.jpg)
 
 
 
 - App flow : (Note: the data is written in the images just random data.)
 
-![cvBuilder_1](https://user-images.githubusercontent.com/60351703/210871783-e493f7f8-49e4-41ab-bad0-21831a9d7cee.jpg)
-![cvB2](https://user-images.githubusercontent.com/60351703/210872502-fb2e7b92-15c5-490f-9392-f647b970977b.jpg)
-![cvB3](https://user-images.githubusercontent.com/60351703/210873629-39bb45a5-beee-46a5-84ee-6b0a53d312df.jpg)
-![cvB4](https://user-images.githubusercontent.com/60351703/210873626-611505cf-fe7e-4d4e-87b3-f3dcd654318d.jpg)
-![cvB5](https://user-images.githubusercontent.com/60351703/210873624-336334aa-6ab8-409d-8b22-a4a87fa40e6f.jpg)
-![cvB6](https://user-images.githubusercontent.com/60351703/210874389-97ac4ca8-2327-4863-a020-7396df18f981.jpg)
+![info](https://user-images.githubusercontent.com/60351703/213819791-afd1babe-b36e-4c37-b0eb-bee93a8aa74b.jpg)
+![work](https://user-images.githubusercontent.com/60351703/213820411-84bf9a27-5951-488d-8ec1-6e5e103aa4b5.jpg)
+![edu](https://user-images.githubusercontent.com/60351703/213820406-75da80fa-a329-4961-acdb-b2882ba9976d.jpg)
+![skills](https://user-images.githubusercontent.com/60351703/213820409-11a2acc6-8757-4be8-9642-a2897e8eb33c.jpg)
+![summary](https://user-images.githubusercontent.com/60351703/213820410-1a2e9f2b-b5dc-4803-82ca-4e3545d565db.jpg)
+![extra1](https://user-images.githubusercontent.com/60351703/213820408-442336a7-7e33-4174-927a-77c98195ed47.jpg)
 - Show the result on press finish button 
 
-![cvB7](https://user-images.githubusercontent.com/60351703/210875432-d68893e7-557b-48b1-8c7b-6cd85e855326.jpg)
+![extra2](https://user-images.githubusercontent.com/60351703/213821116-a8ad255a-ae47-4742-85f7-36dd54038763.jpg)
+
+
 
 - The pdf output result: 
 
-![cvB8](https://user-images.githubusercontent.com/60351703/210875426-12649de4-2ca9-4623-b2d3-7a8ee42a429a.jpg)
+Incomplet form
+![output](https://user-images.githubusercontent.com/60351703/213819796-cf81a3b2-f15f-4776-a160-14b20f38632d.jpg)
+
+Complete form
+![output2](https://user-images.githubusercontent.com/60351703/213820971-fc2d26a3-bd45-4cfd-b2b5-da39602933bc.png)
 
 
 
